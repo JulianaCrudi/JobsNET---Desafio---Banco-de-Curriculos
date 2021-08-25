@@ -31,24 +31,20 @@ document.getElementById('cep').addEventListener('focusout',pesquisarCep)
 
 /*VALIDAÇÃO CPF*/
 
-const cpf = document.getElementById('cpf').value;
-document.getElementById('cpf').addEventListener('focusout',validaCPF)
-
-function validaCPF(cpf) {
-  if (cpf.length != 11) {
-     alert('CPF INVALIDO! POR FAVOR DIGITE UM CPF VÁLIDO COM 11 DIGITOS (APENAS NÚMEROS)')
-  }
-  else{
-    return true;
+const validaCPF = async() =>{
+  const cpf = document.getElementById('cpf').value
+    if (cpf.length != 11) {
+      alert('CPF INVALIDO! POR FAVOR DIGITE UM CPF VÁLIDO COM 11 DIGITOS (APENAS NÚMEROS)')
+  } else{
+    return true
   }
 }
+document.getElementById('cpf').addEventListener('focusout',validaCPF)
 
 /*VALIDAÇÃO DO RG*/
 
-const rg = document.getElementById('rg').value;
-document.getElementById('rg').addEventListener('focusout',validaRG)
-
-function validaRG(rg) {
+const validaRG = async() => {
+  const rg = document.getElementById('rg').value;
   if (rg.length != 9) {
      alert('RG INVALIDO! POR FAVOR DIGITE UM RG VÁLIDO COM 9 DIGITOS (APENAS NÚMEROS)')
   }
@@ -56,3 +52,4 @@ function validaRG(rg) {
     return true;
   }
 }
+document.getElementById('rg').addEventListener('focusout',validaRG)
